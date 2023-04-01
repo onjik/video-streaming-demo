@@ -1,0 +1,61 @@
+spring:
+  profiles:
+    active: local
+
+--- #test 설정
+spring:
+  config:
+    activate:
+      on-profile: "test"
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:~/test
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+
+logging:
+  level:
+    root: warn
+
+--- #local 설정
+spring:
+  config:
+    activate:
+      on-profile: "local"
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:~/test
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8081
+
+logging:
+  level:
+    root: info
+
+--- #prod 설정
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+logging:
+  level:
+    root: info

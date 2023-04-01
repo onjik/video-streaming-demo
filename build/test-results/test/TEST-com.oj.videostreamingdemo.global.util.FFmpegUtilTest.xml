@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.oj.videostreamingdemo.global.util.FFmpegUtilTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-04-01T09:13:03" hostname="gim-onjiui-noteubug.local" time="2.148">
+  <properties/>
+  <testcase name="convertVideoProp()" classname="com.oj.videostreamingdemo.global.util.FFmpegUtilTest" time="2.098"/>
+  <testcase name="getProbeResult()" classname="com.oj.videostreamingdemo.global.util.FFmpegUtilTest" time="0.05"/>
+  <system-out><![CDATA[4675215
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

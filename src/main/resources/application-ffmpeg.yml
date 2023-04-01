@@ -1,0 +1,40 @@
+# ffmpeg 관련 설정
+# 이 파일은 application.yml 에서 추가하지 마세요
+# ProfileResolverEnvironmentPostProcessor 에서 OS에 맞게 Property 를 주입합니다.
+
+
+# 공통 설정
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 30MB # 한개당 제한 사이즈
+      max-request-size: 80MB # 한번에 최대 업로드 용량
+--- #MAC OS 설정
+os-name: MAC
+ffmpeg-tools:
+  ffmpeg:
+    location: file:ffmpeg/mac/ffmpeg
+  ffprobe:
+    location: file:ffmpeg/mac/ffprobe
+--- #WIN OS 설정
+os-name: WIN
+ffmpeg-tools:
+  ffmpeg:
+    location: file:ffmpeg/window/bin/ffmpeg.exe
+  ffprobe:
+    location: file:ffmpeg/window/bit/ffprobe.exe
+--- #Linux_arm64
+os-name: LINUX_ARM64
+ffmpeg-tools:
+  ffmpeg:
+    location: file:ffmpeg/linux_arm64/ffmpeg
+  ffprobe:
+    location: file:ffmpeg/linux_arm64/ffprobe
+--- #Linux_amd64
+os-name: LINUX_ARM64
+ffmpeg-tools:
+  ffmpeg:
+    location: file:ffmpeg/linux_amd64/ffmpeg
+  ffprobe:
+    location: file:ffmpeg/linux_amd64/ffprobe
